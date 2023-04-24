@@ -14,9 +14,22 @@ namespace Narucivanje_hrane_projekat
 {
     public partial class LoginForm : Form
     {
+        public static List<Korisnik> korisnici=new List<Korisnik>();
         public LoginForm()
         {
             InitializeComponent();
+
+            //OVDE UCITAVAM SVE KORISNIKE IZ FAJLA
+            /////////////////////////////////////////////////////////////////////
+            FileStream fs = new FileStream("korisnici.bin", FileMode.OpenOrCreate);
+            BinaryFormatter formater = new BinaryFormatter();
+            while(fs.Position< fs.Length)
+            {
+                Korisnik korisnik = (Korisnik)formater.Deserialize(fs);
+                korisnici.Add(korisnik);
+            }
+            fs.Close();
+            /////////////////////////////////////////////////////////////////////
         }
 
         private void btnKreirajNalog_Click(object sender, EventArgs e)
@@ -27,23 +40,28 @@ namespace Narucivanje_hrane_projekat
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(File.Exists(txtUsername.Text+".bin"))
+            string usr = txtUsername.Text;
+            string psw = txtPasswd.Text;
+            bool uspesna_prijava = false;
+            foreach(Korisnik korisnik in korisnici)
             {
-                FileStream fs = new FileStream(txtUsername.Text+".bin", FileMode.Open);
-                BinaryFormatter formater=new BinaryFormatter();
-                Korisnik nalog = (Korisnik)formater.Deserialize(fs);
-                if(nalog.Uspesna_prijava(txtUsername.Text,txtPasswd.Text)==true)
+                if(korisnik.Uspesna_prijava(usr, psw)==true)
                 {
                     MessageBox.Show("Uspesna prijava!");
+                    uspesna_prijava=true;
+                    break;
                 }
-                else
-                {
-                    MessageBox.Show("NEUSPESNA PRIJAVA!!!");
-                }
-                fs.Close();
             }
-            else
-                MessageBox.Show("Nalog sa unetim korisnickim imenom ne postoji!");
+            if(uspesna_prijava==false)
+                MessageBox.Show("NEUSPESNA PRIJAVA!!!");
+
+        }
+
+
+        //PRI ZATVARANJU POCETNE FORME CUVAM PODATKE KOJE SAM MENJAO U LISTI
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //FileStream fs=new FileStream("korisnici.bin",FileMode.Open,FileAccess.Write);
 
         }
     }

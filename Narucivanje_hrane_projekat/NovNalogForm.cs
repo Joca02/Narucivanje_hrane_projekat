@@ -28,6 +28,11 @@ namespace Narucivanje_hrane_projekat
                 Korisnik nalog = new Korisnik(txtUsername.Text,txtPasswd.Text,txtIme.Text,txtPrezime.Text,chbAdmin.Checked);
                 if (nalog.Sacuvaj_nalog()==false)
                     MessageBox.Show("Korisnicko ime je zauzeto!");
+                else
+                {
+                    MessageBox.Show("Uspesno je kreiran nalog!");
+                }
+                   
             }
         }
     }
