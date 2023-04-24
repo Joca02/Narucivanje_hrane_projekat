@@ -10,7 +10,8 @@ namespace Narucivanje_hrane_projekat
     [Serializable]
     public class Korisnik
     {
-        static int ID;
+        static int broj_clanova;
+        int ID;
         string korisnicko_ime;
         string sifra;
         string ime;
@@ -25,7 +26,8 @@ namespace Narucivanje_hrane_projekat
             this.Ime=ime;
             this.Prezime=prezime;
             this.admin=admin;
-            ID++;
+            broj_clanova++;
+            ID=broj_clanova;
         }
 
         public string Korisnicko_ime { get => korisnicko_ime; set => korisnicko_ime=value; }
