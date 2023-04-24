@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dodatak.cs" />
+    <Compile Include="Jelo.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,8 +61,11 @@
     <Compile Include="NovNalogForm.Designer.cs">
       <DependentUpon>NovNalogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prilog.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restoran.cs" />
+    <Compile Include="Rezervacija.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
