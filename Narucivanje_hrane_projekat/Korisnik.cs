@@ -36,11 +36,20 @@ namespace Narucivanje_hrane_projekat
 
         public bool Sacuvaj_nalog()
         {
-            if (File.Exists(Korisnicko_ime+".bin"))
-                return false;
-            FileStream fs=new FileStream(this.Korisnicko_ime+".bin", FileMode.Create);
+            //AKO U LISTI VEC POSTOJI KORISNIK SA ISTIM IMENOM NE MOZE DA SE SACUVA NALOG
+            foreach(Korisnik korisnik in LoginForm.korisnici)
+            {
+                if(korisnik.Korisnicko_ime==this.Korisnicko_ime)
+                {
+                    return false;
+                }
+            }
+
+            //APDEJTUJEM LISTU IZ KOJE TRENUTNO PRATIM KORISNIKE KAO I BAZU KORISNICI.BIN
+            FileStream fs=new FileStream("korisnici.bin", FileMode.Append);
             BinaryFormatter formater=new BinaryFormatter();
             formater.Serialize(fs, this);
+            LoginForm.korisnici.Add(this);
             fs.Close();
             return true;   
         }
