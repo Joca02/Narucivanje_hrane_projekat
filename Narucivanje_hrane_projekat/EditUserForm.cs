@@ -31,14 +31,16 @@ namespace Narucivanje_hrane_projekat
         {
             if (!this.IsDisposed)
             {
-                Debug.WriteLine("btnKreiraj_Click called");
                 global_korisnik.Ime=txtIme.Text;
                 global_korisnik.Korisnicko_ime=txtUsername.Text;
                 global_korisnik.Sifra=txtPasswd.Text;
                 global_korisnik.Prezime=txtPrezime.Text;
                 global_korisnik.Admin=chbAdmin.Checked;
                 MessageBox.Show("Izmene su uspesno zabelezene.");
+                AdminForm.korisnici.DataSource=null;
+
                 AdminForm.pOsvezi();
+               
             }
             this.Close();
         }
