@@ -147,16 +147,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPasswd;
-        private System.Windows.Forms.Button btnKreiraj;
-        private System.Windows.Forms.TextBox txtPrezime;
-        private System.Windows.Forms.TextBox txtIme;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox chbAdmin;
+        public System.Windows.Forms.TextBox txtUsername;
+        public System.Windows.Forms.TextBox txtPasswd;
+        public System.Windows.Forms.TextBox txtPrezime;
+        public System.Windows.Forms.TextBox txtIme;
+        public System.Windows.Forms.Button btnKreiraj;
+        public System.Windows.Forms.CheckBox chbAdmin;
     }
 }

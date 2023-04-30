@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Narucivanje_hrane_projekat
 {
+    [Serializable]
     public class Jelo
     {
-        static int broj_clanova;
+        public static int dodela_ID;
         int ID;
         string naziv;
         double gramaza;
@@ -28,6 +29,8 @@ namespace Narucivanje_hrane_projekat
             this.Cena=cena;
             ID_prilog1=iD_prilog;
             ID_restoran1=iD_restoran;
+            dodela_ID++;
+            ID=dodela_ID;
         }
 
         public string Naziv { get => naziv; set => naziv=value; }
@@ -37,5 +40,6 @@ namespace Narucivanje_hrane_projekat
         public int ID_prilog1 { get => ID_prilog; set => ID_prilog=value; }
         public int ID_restoran1 { get => ID_restoran; set => ID_restoran=value; }
         public bool Prilog_obavezan { get => prilog_obavezan; set => prilog_obavezan=value; }
+        public int id { get => ID; }
     }
 }

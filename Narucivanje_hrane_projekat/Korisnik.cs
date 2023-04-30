@@ -10,7 +10,7 @@ namespace Narucivanje_hrane_projekat
     [Serializable]
     public class Korisnik
     {
-        static int broj_clanova;
+        public static int dodela_ID;
         int ID;
         string korisnicko_ime;
         string sifra;
@@ -26,15 +26,16 @@ namespace Narucivanje_hrane_projekat
             this.Ime=ime;
             this.Prezime=prezime;
             this.admin=admin;
-            broj_clanova++;
-            ID=broj_clanova;
+            dodela_ID++;
+            ID=dodela_ID;
         }
 
         public string Korisnicko_ime { get => korisnicko_ime; set => korisnicko_ime=value; }
         public string Sifra { get => sifra; set => sifra=value; }
         public string Ime { get => ime; set => ime=value; }
         public string Prezime { get => prezime; set => prezime=value; }
-        public bool Admin { get => admin; }     //skinuo sam set da ne bih mogao da menjam admin properti
+        public bool Admin { get => admin; set => admin=value; }     //skinuo sam set da ne bih mogao da menjam admin properti
+        public int id { get => ID; }
 
         public bool Sacuvaj_nalog()
         {
@@ -59,6 +60,24 @@ namespace Narucivanje_hrane_projekat
         public bool Uspesna_prijava(string usr,string psw)
         {
             return (usr==Korisnicko_ime && psw==Sifra);
+        }
+
+        public override string ToString()
+        {
+            if(admin==true)
+                return " ID: "+ID+
+                    "\n Korisnicko ime: "+korisnicko_ime+
+                    "\n Ime: "+ime+
+                    "\n Prezime"+prezime+
+                    "\n Admin: jeste"+
+                    "\n Lozinka: nije dostupna!" ;
+            else
+                return " ID: "+ID+
+                   "\n Korisnicko ime: "+korisnicko_ime+
+                   "\n Ime: "+ime+
+                   "\n Prezime"+prezime+
+                   "\n Admin: nije"+
+                   "\n Lozinka: "+sifra;
         }
     }
 }
