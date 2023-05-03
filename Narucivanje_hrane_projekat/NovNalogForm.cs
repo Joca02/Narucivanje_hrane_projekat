@@ -17,7 +17,7 @@ namespace Narucivanje_hrane_projekat
             InitializeComponent();
         }
 
-        private void btnKreiraj_Click(object sender, EventArgs e)
+        public virtual void btnKreiraj_Click(object sender, EventArgs e)
         {
             if (txtPasswd.Text.Length<3 || txtUsername.Text.Length<3 || txtIme.Text.Length<3|| txtPrezime.Text.Length<3)
             {
@@ -31,6 +31,7 @@ namespace Narucivanje_hrane_projekat
                 else
                 {
                     MessageBox.Show("Uspesno je kreiran nalog!");
+                    this.Close();
                 }
                    
             }
