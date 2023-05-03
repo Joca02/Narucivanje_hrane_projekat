@@ -62,7 +62,7 @@ namespace Narucivanje_hrane_projekat
             }
             fs.Dispose();
             if (restorani.Count > 0)
-                Restoran.dodela_ID=jela[restorani.Count-1].id;
+                Restoran.dodela_ID=restorani[restorani.Count-1].id;
             //////////////////////////////////////////////////////////////////
 
 
@@ -76,7 +76,7 @@ namespace Narucivanje_hrane_projekat
             }
             fs.Dispose();
             if (prilozi.Count > 0)
-                Prilog.dodela_ID=jela[restorani.Count-1].id;
+                Prilog.dodela_ID=prilozi[prilozi.Count-1].id;
             //////////////////////////////////////////////////////////////////
 
             //DODACI
@@ -89,7 +89,7 @@ namespace Narucivanje_hrane_projekat
             }
             fs.Dispose();
             if (dodaci.Count > 0)
-                Dodatak.dodela_ID=jela[restorani.Count-1].id;
+                Dodatak.dodela_ID=dodaci[dodaci.Count-1].id;
             //////////////////////////////////////////////////////////////////
 
             //REZERVACIJE
@@ -102,7 +102,7 @@ namespace Narucivanje_hrane_projekat
             }
             fs.Dispose();
             if (rezervacije.Count > 0)
-                Rezervacija.dodela_ID=jela[restorani.Count-1].id;
+                Rezervacija.dodela_ID=rezervacije[rezervacije.Count-1].id;
             //////////////////////////////////////////////////////////////////
 
 

@@ -53,13 +53,31 @@
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Dodatak.cs" />
+    <Compile Include="DodatakForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodatakForm.Designer.cs">
+      <DependentUpon>DodatakForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="IzaberiRestoranForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzaberiRestoranForm.Designer.cs">
+      <DependentUpon>IzaberiRestoranForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Jelo.cs" />
+    <Compile Include="JeloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JeloForm.Designer.cs">
+      <DependentUpon>JeloForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="KlijentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,21 +98,51 @@
       <DependentUpon>NovNalogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Prilog.cs" />
+    <Compile Include="PrilogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrilogForm.Designer.cs">
+      <DependentUpon>PrilogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restoran.cs" />
+    <Compile Include="RestoranForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestoranForm.Designer.cs">
+      <DependentUpon>RestoranForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rezervacija.cs" />
+    <Compile Include="RezervacijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RezervacijaForm.Designer.cs">
+      <DependentUpon>RezervacijaForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DodatakForm.resx">
+      <DependentUpon>DodatakForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzaberiRestoranForm.resx">
+      <DependentUpon>IzaberiRestoranForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JeloForm.resx">
+      <DependentUpon>JeloForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NovNalogForm.resx">
       <DependentUpon>NovNalogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrilogForm.resx">
+      <DependentUpon>PrilogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,6 +153,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RestoranForm.resx">
+      <DependentUpon>RestoranForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RezervacijaForm.resx">
+      <DependentUpon>RezervacijaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

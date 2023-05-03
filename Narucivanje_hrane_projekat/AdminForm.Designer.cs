@@ -75,26 +75,26 @@
             this.izmeniKorisnikaToolStripMenuItem,
             this.dodajKorisnikaToolStripMenuItem});
             this.cmsKorisnici.Name = "cmsKorisnik";
-            this.cmsKorisnici.Size = new System.Drawing.Size(181, 92);
+            this.cmsKorisnici.Size = new System.Drawing.Size(164, 70);
             // 
             // izbrisiKorisnikaToolStripMenuItem
             // 
             this.izbrisiKorisnikaToolStripMenuItem.Name = "izbrisiKorisnikaToolStripMenuItem";
-            this.izbrisiKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.izbrisiKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.izbrisiKorisnikaToolStripMenuItem.Text = "Izbrisi  Korisnika";
             this.izbrisiKorisnikaToolStripMenuItem.Click += new System.EventHandler(this.izbrisiKorisnikaToolStripMenuItem_Click_1);
             // 
             // izmeniKorisnikaToolStripMenuItem
             // 
             this.izmeniKorisnikaToolStripMenuItem.Name = "izmeniKorisnikaToolStripMenuItem";
-            this.izmeniKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.izmeniKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.izmeniKorisnikaToolStripMenuItem.Text = "Izmeni  Korisnika";
             this.izmeniKorisnikaToolStripMenuItem.Click += new System.EventHandler(this.izmeniKorisnikaToolStripMenuItem_Click_1);
             // 
             // dodajKorisnikaToolStripMenuItem
             // 
             this.dodajKorisnikaToolStripMenuItem.Name = "dodajKorisnikaToolStripMenuItem";
-            this.dodajKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.dodajKorisnikaToolStripMenuItem.Text = "Dodaj Korisnika";
             this.dodajKorisnikaToolStripMenuItem.Click += new System.EventHandler(this.dodajKorisnikaToolStripMenuItem_Click);
             // 
@@ -185,18 +185,21 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
             this.toolStripMenuItem1.Text = "Izbrisi Rezervaciju";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
             this.toolStripMenuItem2.Text = "Izmeni Rezervaciju";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // dodajRezervacijuToolStripMenuItem
             // 
             this.dodajRezervacijuToolStripMenuItem.Name = "dodajRezervacijuToolStripMenuItem";
             this.dodajRezervacijuToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.dodajRezervacijuToolStripMenuItem.Text = "Dodaj Rezervaciju";
+            this.dodajRezervacijuToolStripMenuItem.Click += new System.EventHandler(this.dodajRezervacijuToolStripMenuItem_Click);
             // 
             // cmsRestorani
             // 
@@ -212,18 +215,21 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(158, 22);
             this.toolStripMenuItem3.Text = "Izbrisi Restoran ";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(158, 22);
             this.toolStripMenuItem4.Text = "Izmeni Restoran";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // dodajRestoranToolStripMenuItem
             // 
             this.dodajRestoranToolStripMenuItem.Name = "dodajRestoranToolStripMenuItem";
             this.dodajRestoranToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.dodajRestoranToolStripMenuItem.Text = "Dodaj Restoran";
+            this.dodajRestoranToolStripMenuItem.Click += new System.EventHandler(this.dodajRestoranToolStripMenuItem_Click);
             // 
             // cmsJela
             // 
@@ -232,25 +238,28 @@
             this.toolStripMenuItem6,
             this.dodajJeloToolStripMenuItem});
             this.cmsJela.Name = "cmsKorisnik";
-            this.cmsJela.Size = new System.Drawing.Size(133, 70);
+            this.cmsJela.Size = new System.Drawing.Size(181, 92);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(132, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem5.Text = "Izbrisi Jelo";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(132, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem6.Text = "Izmeni Jelo";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
             // dodajJeloToolStripMenuItem
             // 
             this.dodajJeloToolStripMenuItem.Name = "dodajJeloToolStripMenuItem";
-            this.dodajJeloToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.dodajJeloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dodajJeloToolStripMenuItem.Text = "Dodaj Jelo";
+            this.dodajJeloToolStripMenuItem.Click += new System.EventHandler(this.dodajJeloToolStripMenuItem_Click);
             // 
             // cmsDodaci
             // 
@@ -264,20 +273,23 @@
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(156, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem7.Text = "Izbrisi Dodatak";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(156, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem8.Text = "Izmeni Dodatak";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // dodajDodatakToolStripMenuItem
             // 
             this.dodajDodatakToolStripMenuItem.Name = "dodajDodatakToolStripMenuItem";
-            this.dodajDodatakToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.dodajDodatakToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dodajDodatakToolStripMenuItem.Text = "Dodaj Dodatak";
+            this.dodajDodatakToolStripMenuItem.Click += new System.EventHandler(this.dodajDodatakToolStripMenuItem_Click);
             // 
             // cmsPrilozi
             // 
@@ -293,18 +305,21 @@
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
             this.toolStripMenuItem9.Size = new System.Drawing.Size(143, 22);
             this.toolStripMenuItem9.Text = "Izbrisi Prilog";
+            this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
             // toolStripMenuItem10
             // 
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Size = new System.Drawing.Size(143, 22);
             this.toolStripMenuItem10.Text = "Izmeni Prilog";
+            this.toolStripMenuItem10.Click += new System.EventHandler(this.toolStripMenuItem10_Click);
             // 
             // dodajPrilogToolStripMenuItem
             // 
             this.dodajPrilogToolStripMenuItem.Name = "dodajPrilogToolStripMenuItem";
             this.dodajPrilogToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.dodajPrilogToolStripMenuItem.Text = "Dodaj Prilog";
+            this.dodajPrilogToolStripMenuItem.Click += new System.EventHandler(this.dodajPrilogToolStripMenuItem_Click);
             // 
             // AdminForm
             // 
