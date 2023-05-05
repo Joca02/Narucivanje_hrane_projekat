@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 namespace Narucivanje_hrane_projekat
 {
@@ -15,20 +17,36 @@ namespace Narucivanje_hrane_projekat
         int ID;
         string naziv;
         double gramaza;
-        string opis;
+        string opis="Nema opisa za ovo jelo.";
         double cena;
-        int ID_prilog;
-        int ID_restoran;
+        int ID_prilog=-1;
+        int ID_restoran=-1;
         bool prilog_obavezan = false;
-        List<Dodatak> dodaci;
+        public List<int> id_dodaci = new List<int>();
+        bool showID=true;
+        public bool ShowID { get => showID; set => showID=value; }
+
 
         public Jelo ()
         {
             naziv=opis="";
             cena=gramaza=0.0;
         }
+        public Jelo(Jelo j)
+        {
+            this.naziv = j.naziv;
+            this.gramaza = j.gramaza;
+            this.opis = j.opis;
+            this.cena = j.cena;
+            this.ID_prilog = j.ID_prilog;
+            this.ID_restoran = j.ID_restoran;
+            this.prilog_obavezan = j.prilog_obavezan;
+            this.id_dodaci = new List<int>(j.id_dodaci);
+            this.showID = j.showID;
+        }
         public Jelo(string naziv,  double cena,double gramaza, string opis,int ID_restoran)
         {
+            
             this.Naziv=naziv;
             this.Gramaza=gramaza;
             this.Opis=opis;
@@ -51,7 +69,7 @@ namespace Narucivanje_hrane_projekat
         {
             foreach (Jelo jelo in LoginForm.jela)
             {
-                if (jelo.naziv==naziv)
+                if (jelo.naziv==naziv && jelo.ID_restoran==ID_restoran)
                 {
                     return false;
                 }
@@ -68,11 +86,15 @@ namespace Narucivanje_hrane_projekat
             foreach(Restoran r in LoginForm.restorani)
             {
                 if(r.id==ID_Restoran)
-                    return "JeloID "+ID+" "+naziv +" cena "+cena+" gramaza: "+gramaza+"g"+" Restoran: "+r.Naziv;
+                {
+                    if(showID==true)
+                        return "JeloID "+ID+" "+naziv +" cena "+cena+"din  gramaza: "+gramaza+"g"+" Restoran: "+r.Naziv;
+                    else
+                        return "Jelo "+naziv +" cena "+cena+"din   gramaza: "+gramaza+"g"+" Restoran: "+r.Naziv;
+                }
+                    
             }
-            return "JeloID "+ID+" "+naziv +" cena "+cena+" gramaza: "+gramaza+"g";
-
-
+            return " ";
         }
     }
 }

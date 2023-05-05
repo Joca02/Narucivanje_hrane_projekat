@@ -20,11 +20,10 @@ namespace Narucivanje_hrane_projekat
         public static List<Dodatak> dodaci = new List<Dodatak>();
         public static List<Rezervacija> rezervacije = new List<Rezervacija>();
         public static List<Restoran> restorani = new List<Restoran>();
-
+        BinaryFormatter formater = new BinaryFormatter();
         public LoginForm()
         {
             InitializeComponent();
-            BinaryFormatter formater = new BinaryFormatter();
 
             //OVDE UCITAVAM SVE KORISNIKE IZ FAJLA
             ////////////////////////////////////////////////////////////////////////
@@ -127,26 +126,74 @@ namespace Narucivanje_hrane_projekat
                     uspesna_prijava=true;
                     if(korisnik.Admin==true)
                     {
-                        AdminForm frm = new AdminForm();
+                        AdminForm frm = new AdminForm(korisnik);
+                        foreach (Restoran r in restorani)
+                            r.ShowID=true;
+                        foreach (Jelo j in jela)
+                            j.ShowID=true;
+                        foreach (Dodatak d in dodaci)
+                            d.ShowID=true;
+                        foreach (Prilog p in prilozi)
+                            p.ShowID=true;
+                        foreach (Rezervacija r in rezervacije)
+                            r.ShowID=true;
                         frm.Show();
                     }    
                     else
                     {
-                        KlijentForm frm = new KlijentForm();
+                        KlijentForm frm = new KlijentForm(korisnik);
+                        foreach (Restoran r in restorani)
+                            r.ShowID=false;
+                        foreach (Jelo j in jela)
+                            j.ShowID=false;
+                        foreach (Dodatak d in dodaci)
+                            d.ShowID=false;
+                        foreach (Prilog p in prilozi)
+                            p.ShowID=false;
+                        foreach (Rezervacija r in rezervacije)
+                            r.ShowID=false;
                         frm.Show();
                     }
                     break;
                 }
             }
             if(uspesna_prijava==false)
-                MessageBox.Show("NEUSPESNA PRIJAVA!!!");
+                MessageBox.Show("Pogresno korisnicko ime ili lozinka!");
         }
 
 
-        //PRI ZATVARANJU POCETNE FORME CUVAM PODATKE KOJE SAM MENJAO U LISTI
+        //PRI ZATVARANJU POCETNE FORME CUVAM PODATKE KOJE SAM MENJAO U LISTAMA
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //FileStream fs=new FileStream("korisnici.bin",FileMode.Open,FileAccess.Write);
+            FileStream fs=new FileStream("korisnici.bin",FileMode.Open,FileAccess.Write);
+            foreach (Korisnik korisnik in korisnici)
+                formater.Serialize(fs, korisnik);
+            fs.Dispose();
+
+            fs=new FileStream("restorani.bin", FileMode.Open, FileAccess.Write);
+            foreach (Restoran r in restorani)
+                formater.Serialize(fs, r);
+            fs.Dispose();
+
+            fs=new FileStream("prilozi.bin", FileMode.Open, FileAccess.Write);
+            foreach (Prilog p in prilozi)
+                formater.Serialize(fs, p);
+            fs.Dispose();
+
+            fs=new FileStream("dodaci.bin", FileMode.Open, FileAccess.Write);
+            foreach (Dodatak d in dodaci)
+                formater.Serialize(fs, d);
+            fs.Dispose();
+
+            fs=new FileStream("rezervacije.bin", FileMode.Open, FileAccess.Write);
+            foreach (Rezervacija r in rezervacije)
+                formater.Serialize(fs, r);
+            fs.Dispose();
+
+            fs=new FileStream("jela.bin", FileMode.Open, FileAccess.Write);
+            foreach (Jelo j in jela)
+                formater.Serialize(fs, j);
+            fs.Dispose();
 
         }
     }

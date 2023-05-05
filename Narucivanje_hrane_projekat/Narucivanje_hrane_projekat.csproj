@@ -84,6 +84,12 @@
     <Compile Include="KlijentForm.Designer.cs">
       <DependentUpon>KlijentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="KlijentRestoranForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KlijentRestoranForm.Designer.cs">
+      <DependentUpon>KlijentRestoranForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,12 @@
     </Compile>
     <Compile Include="NovNalogForm.Designer.cs">
       <DependentUpon>NovNalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PorucivanjeJelaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PorucivanjeJelaForm.Designer.cs">
+      <DependentUpon>PorucivanjeJelaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Prilog.cs" />
     <Compile Include="PrilogForm.cs">
@@ -135,11 +147,20 @@
     <EmbeddedResource Include="JeloForm.resx">
       <DependentUpon>JeloForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KlijentForm.resx">
+      <DependentUpon>KlijentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KlijentRestoranForm.resx">
+      <DependentUpon>KlijentRestoranForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NovNalogForm.resx">
       <DependentUpon>NovNalogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PorucivanjeJelaForm.resx">
+      <DependentUpon>PorucivanjeJelaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrilogForm.resx">
       <DependentUpon>PrilogForm.cs</DependentUpon>
