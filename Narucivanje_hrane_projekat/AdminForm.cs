@@ -23,11 +23,12 @@ namespace Narucivanje_hrane_projekat
 
         public delegate void Osvezi();
         public static Osvezi pOsvezi;
-        public AdminForm()
+        Korisnik admin;
+        public AdminForm(Korisnik korisnik)
         {
             InitializeComponent();
             liste= new List<ListBox>();
-
+            admin=korisnik;
             korisnici.DataSource=LoginForm.korisnici;
             rezervacije.DataSource=LoginForm.rezervacije;
             restorani.DataSource=LoginForm.restorani;
@@ -43,10 +44,14 @@ namespace Narucivanje_hrane_projekat
             prilozi.ContextMenuStrip=cmsPrilozi;
 
             korisnici.MouseDoubleClick+=Korisnici_MouseDoubleClick;
+            rezervacije.MouseDoubleClick+=Rezervacije_MouseDoubleClick;
+            restorani.MouseDoubleClick+=Restorani_MouseDoubleClick;
+            prilozi.MouseDoubleClick+=Prilozi_MouseDoubleClick;
+            jela.MouseDoubleClick+=Jela_MouseDoubleClick;
+            dodaci.MouseDoubleClick+=Dodaci_MouseDoubleClick;
             
         }
-
-        
+       
 
         private void Osvezi_korisnicki_Listbox()
         {
@@ -85,6 +90,14 @@ namespace Narucivanje_hrane_projekat
             jela.DataSource=LoginForm.jela;
             if (pOsvezi!=null)
                 pOsvezi-=Osvezi_jelo_listbox;
+        }
+
+        void Osvezi_rezervacije_listbox()
+        {
+            rezervacije.DataSource=null;
+            rezervacije.DataSource=LoginForm.rezervacije;
+            if (pOsvezi!=null)
+                pOsvezi-=Osvezi_rezervacije_listbox;
         }
 
 
@@ -183,9 +196,15 @@ namespace Narucivanje_hrane_projekat
             int index = korisnici.SelectedIndex;
             if (index!=-1)
             {
-                LoginForm.korisnici.RemoveAt(index);
-                pOsvezi+=Osvezi_korisnicki_Listbox;
-                pOsvezi();
+                if (LoginForm.korisnici[index]!=admin)  //da ne bih izbrisao sebe
+                {
+                    LoginForm.korisnici.RemoveAt(index);
+                    pOsvezi+=Osvezi_korisnicki_Listbox;
+                    pOsvezi();
+                }
+                else
+                    MessageBox.Show("Ne mozete izbrisati svoj nalog dok ste ulogovani!");
+               
             }
         }
 
@@ -210,7 +229,7 @@ namespace Narucivanje_hrane_projekat
 
         private void Korisnici_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("Kliknuli ste na \n"+korisnici.SelectedItem);
+            MessageBox.Show(korisnici.SelectedItem.ToString());
         }
         //////////////////////////////////////////////////////////////////////////////////////
         
@@ -245,8 +264,12 @@ namespace Narucivanje_hrane_projekat
             form.Show();
             pOsvezi+=Osvezi_Restoran_listbox;
         }
+        private void Restorani_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(restorani.SelectedItem.ToString());
+        }
         //////////////////////////////////////////////////////////////////////////////////////
-        
+
         //PRILOG
         //////////////////////////////////////////////////////////////////////////////////////
         private void toolStripMenuItem9_Click(object sender, EventArgs e)   //brisanje priloga
@@ -277,6 +300,10 @@ namespace Narucivanje_hrane_projekat
             PrilogForm form= new PrilogForm(p);
             form.Show();
             pOsvezi+=Osvezi_Prilog_listbox;
+        }
+        private void Prilozi_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(prilozi.SelectedItem.ToString());
         }
         //////////////////////////////////////////////////////////////////////////////////////
 
@@ -310,6 +337,10 @@ namespace Narucivanje_hrane_projekat
             DodatakForm form = new DodatakForm(d);
             form.Show();
             pOsvezi+=Osvezi_Dodatak_listbox;
+        }
+        private void Dodaci_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(dodaci.SelectedItem.ToString());
         }
         //////////////////////////////////////////////////////////////////////////////////////
 
@@ -345,23 +376,29 @@ namespace Narucivanje_hrane_projekat
             form.Show();
             pOsvezi+=Osvezi_jelo_listbox;
         }
+        private void Jela_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //MessageBox.Show(jela.SelectedItem.ToString());
+            MessageBox.Show(LoginForm.jela[jela.SelectedIndex].Opis);
+        }
+
         //////////////////////////////////////////////////////////////////////////////////////
 
         //REZERVACIJE
         //////////////////////////////////////////////////////////////////////////////////////
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            int index = rezervacije.SelectedIndex;
+            if (index!=-1)
+            {
+                LoginForm.rezervacije.RemoveAt(index);
+                pOsvezi+=Osvezi_rezervacije_listbox;
+                pOsvezi();
+            }
         }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void Rezervacije_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
-        }
-
-        private void dodajRezervacijuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            MessageBox.Show(rezervacije.SelectedItem.ToString());
         }
         //////////////////////////////////////////////////////////////////////////////////////
     }

@@ -16,6 +16,8 @@ namespace Narucivanje_hrane_projekat
         string naziv_dodatka;
         double cena;
         double gramaza;
+        bool showID = true;
+        public bool ShowID { get => showID; set => showID=value; }
 
         public Dodatak()
         {
@@ -56,7 +58,10 @@ namespace Narucivanje_hrane_projekat
 
         public override string ToString()
         {
-            return "DodatakID "+ID+" "+naziv_dodatka+" cena "+cena+" "+gramaza+"g";
+            if(showID==true)
+                return "DodatakID "+ID+" "+naziv_dodatka+" cena "+cena+"din "+gramaza+"g";
+            else
+                return "Dodatak "+naziv_dodatka+" cena "+cena+"din "+gramaza+"g";
         }
     }
 }

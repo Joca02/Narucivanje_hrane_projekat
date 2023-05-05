@@ -15,6 +15,9 @@ namespace Narucivanje_hrane_projekat
         int ID;
         string naziv_priloga;
         double cena;
+        bool showID = true;
+        public bool ShowID { get => showID; set => showID=value; }
+
         public Prilog()
         {
             naziv_priloga="";
@@ -50,7 +53,10 @@ namespace Narucivanje_hrane_projekat
         }
         public override string ToString()
         {
-            return "PrilogID "+ID+" "+naziv_priloga+" cena "+cena;
+            if(showID==true)
+                return "PrilogID "+ID+" "+naziv_priloga+" cena "+cena+"din";
+            else
+                return "Prilog "+naziv_priloga+" cena "+cena+"din";
         }
     }
 }

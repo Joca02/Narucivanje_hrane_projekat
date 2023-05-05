@@ -42,8 +42,6 @@
             this.chbDodaci = new System.Windows.Forms.CheckBox();
             this.cmsRezervacije = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dodajRezervacijuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsRestorani = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -174,32 +172,16 @@
             // cmsRezervacije
             // 
             this.cmsRezervacije.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.dodajRezervacijuToolStripMenuItem});
+            this.toolStripMenuItem1});
             this.cmsRezervacije.Name = "cmsKorisnik";
-            this.cmsRezervacije.Size = new System.Drawing.Size(172, 70);
+            this.cmsRezervacije.Size = new System.Drawing.Size(167, 26);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
             this.toolStripMenuItem1.Text = "Izbrisi Rezervaciju";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
-            this.toolStripMenuItem2.Text = "Izmeni Rezervaciju";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // dodajRezervacijuToolStripMenuItem
-            // 
-            this.dodajRezervacijuToolStripMenuItem.Name = "dodajRezervacijuToolStripMenuItem";
-            this.dodajRezervacijuToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.dodajRezervacijuToolStripMenuItem.Text = "Dodaj Rezervaciju";
-            this.dodajRezervacijuToolStripMenuItem.Click += new System.EventHandler(this.dodajRezervacijuToolStripMenuItem_Click);
             // 
             // cmsRestorani
             // 
@@ -238,26 +220,26 @@
             this.toolStripMenuItem6,
             this.dodajJeloToolStripMenuItem});
             this.cmsJela.Name = "cmsKorisnik";
-            this.cmsJela.Size = new System.Drawing.Size(181, 92);
+            this.cmsJela.Size = new System.Drawing.Size(133, 70);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(132, 22);
             this.toolStripMenuItem5.Text = "Izbrisi Jelo";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(132, 22);
             this.toolStripMenuItem6.Text = "Izmeni Jelo";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
             // dodajJeloToolStripMenuItem
             // 
             this.dodajJeloToolStripMenuItem.Name = "dodajJeloToolStripMenuItem";
-            this.dodajJeloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajJeloToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.dodajJeloToolStripMenuItem.Text = "Dodaj Jelo";
             this.dodajJeloToolStripMenuItem.Click += new System.EventHandler(this.dodajJeloToolStripMenuItem_Click);
             // 
@@ -273,21 +255,21 @@
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(156, 22);
             this.toolStripMenuItem7.Text = "Izbrisi Dodatak";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(156, 22);
             this.toolStripMenuItem8.Text = "Izmeni Dodatak";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // dodajDodatakToolStripMenuItem
             // 
             this.dodajDodatakToolStripMenuItem.Name = "dodajDodatakToolStripMenuItem";
-            this.dodajDodatakToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajDodatakToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.dodajDodatakToolStripMenuItem.Text = "Dodaj Dodatak";
             this.dodajDodatakToolStripMenuItem.Click += new System.EventHandler(this.dodajDodatakToolStripMenuItem_Click);
             // 
@@ -360,8 +342,6 @@
         private System.Windows.Forms.ToolStripMenuItem dodajKorisnikaToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip cmsRezervacije;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem dodajRezervacijuToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip cmsRestorani;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;

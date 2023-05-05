@@ -16,6 +16,7 @@ namespace Narucivanje_hrane_projekat
         string naziv;
         string adresa;
         string kontakt_telefon;
+        bool showID=true;
         public Restoran()
         {
             adresa=naziv=kontakt_telefon="";
@@ -33,6 +34,8 @@ namespace Narucivanje_hrane_projekat
         public string Adresa { get => adresa; set => adresa=value; }
         public string Kontakt_telefon { get => kontakt_telefon; set => kontakt_telefon=value; }
         public int id { get => ID;}
+        
+        public bool ShowID { get => showID; set => showID=value; }
 
         public bool Sacuvaj_restoran()
         {
@@ -52,7 +55,10 @@ namespace Narucivanje_hrane_projekat
         }
         public override string ToString()
         {
-            return "RestoranID "+ID+" "+naziv+" "+adresa+" "+kontakt_telefon;
+            if(ShowID==true)
+             return "RestoranID "+ID+" "+naziv+" "+adresa+" "+kontakt_telefon;
+            else
+                return "Restoran "+naziv+" "+adresa+" "+kontakt_telefon;
         }
     }
 }
