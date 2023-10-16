@@ -165,32 +165,32 @@ namespace Narucivanje_hrane_projekat
         //PRI ZATVARANJU POCETNE FORME CUVAM PODATKE KOJE SAM MENJAO U LISTAMA
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FileStream fs=new FileStream("korisnici.bin",FileMode.Open,FileAccess.Write);
+            FileStream fs=new FileStream("korisnici.bin",FileMode.Truncate,FileAccess.Write);
             foreach (Korisnik korisnik in korisnici)
                 formater.Serialize(fs, korisnik);
             fs.Dispose();
 
-            fs=new FileStream("restorani.bin", FileMode.Open, FileAccess.Write);
+            fs=new FileStream("restorani.bin", FileMode.Truncate, FileAccess.Write);
             foreach (Restoran r in restorani)
                 formater.Serialize(fs, r);
             fs.Dispose();
 
-            fs=new FileStream("prilozi.bin", FileMode.Open, FileAccess.Write);
+            fs=new FileStream("prilozi.bin", FileMode.Truncate, FileAccess.Write);
             foreach (Prilog p in prilozi)
                 formater.Serialize(fs, p);
             fs.Dispose();
 
-            fs=new FileStream("dodaci.bin", FileMode.Open, FileAccess.Write);
+            fs=new FileStream("dodaci.bin", FileMode.Truncate, FileAccess.Write);
             foreach (Dodatak d in dodaci)
                 formater.Serialize(fs, d);
             fs.Dispose();
 
-            fs=new FileStream("rezervacije.bin", FileMode.Open, FileAccess.Write);
+            fs=new FileStream("rezervacije.bin", FileMode.Truncate, FileAccess.Write);
             foreach (Rezervacija r in rezervacije)
-                formater.Serialize(fs, r);
+                formater.Serialize(fs, r);               
             fs.Dispose();
 
-            fs=new FileStream("jela.bin", FileMode.Open, FileAccess.Write);
+            fs=new FileStream("jela.bin", FileMode.Truncate, FileAccess.Write);
             foreach (Jelo j in jela)
                 formater.Serialize(fs, j);
             fs.Dispose();
