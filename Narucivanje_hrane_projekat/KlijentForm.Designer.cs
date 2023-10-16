@@ -125,7 +125,7 @@
         private System.Windows.Forms.ListBox lbRezervacije;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtMax;
         private System.Windows.Forms.Button btnDodajRezervaciju;
+        public System.Windows.Forms.DateTimePicker dtMax;
     }
 }

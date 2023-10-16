@@ -38,6 +38,8 @@ namespace Narucivanje_hrane_projekat
                 dtMin.MaxDate=max;
                 dtMax.MaxDate=max;
                 dtMax.MinDate=min;
+                dtMin.Value=min;
+                dtMax.Value=max;
             }
 
         }

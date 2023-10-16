@@ -31,6 +31,7 @@ namespace Narucivanje_hrane_projekat
                 txtOpis.Text=j.Opis;
                 txtRestoran.Text=j.ID_Restoran.ToString();
                 chbPrilog.Checked=j.Prilog_obavezan;
+
             }
         }
 
@@ -58,6 +59,7 @@ namespace Narucivanje_hrane_projekat
                 {
                     Jelo j = new Jelo(txtNaziv.Text, cena, gramaza,txtOpis.Text,id_restorana);
                     j.Prilog_obavezan=chbPrilog.Checked;
+
                     if (j.Sacuvaj_jelo()==false)
                     {
                         MessageBox.Show("Jelo sa unetim nazivom vec postoji u ovom restoranu, morate dodati jelo sa unikatnim nazivom!");
@@ -76,6 +78,7 @@ namespace Narucivanje_hrane_projekat
                     jelo.Opis=txtOpis.Text;
                     jelo.ID_Restoran=id_restorana;
                     jelo.Prilog_obavezan=chbPrilog.Checked;
+                    jelo.ID_Prilog=-1;
                     MessageBox.Show("Uspesno su sacuvane izmene!");
                 }
                 AdminForm.pOsvezi();

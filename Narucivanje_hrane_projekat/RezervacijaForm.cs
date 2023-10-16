@@ -36,6 +36,14 @@ namespace Narucivanje_hrane_projekat
 
             lbRezJela.DataSource=null;
             lbRezJela.DataSource=rezervacija.Porucena_jela;
+            rezervacija.Ukupna_cena=0;
+            foreach (Jelo j in rezervacija.Porucena_jela)
+            {
+                //if (sva_jela.id==j.id)
+                rezervacija.Ukupna_cena+=j.Cena;
+            }
+            double cena = rezervacija.Ukupna_cena;
+            lblCena.Text=cena.ToString()+"din";
             if (AdminForm.pOsvezi!=null)
                 AdminForm.pOsvezi-=Osvezi;
 
@@ -63,23 +71,17 @@ namespace Narucivanje_hrane_projekat
         {
             if (lbRezJela.Items.Count==0)
                 MessageBox.Show("Morate uneti bar 1 jelo za validnu rezervaciju!");
+
             else
             {
-                foreach(Jelo sva_jela in jela)
-                {
-                    foreach(Jelo j in rezervacija.Porucena_jela)
-                    {
-                        if (sva_jela.id==j.id)
-                            rezervacija.Ukupna_cena+=j.Cena;
-                    }
-                        
-                }
-                
                 LoginForm.rezervacije.Add(rezervacija);
                 MessageBox.Show("Uspesno ste dodali rezervaciju!");
                 KlijentForm.osvezi();
                 this.Close();
             }
+              
+                
         }
     }
 }
+

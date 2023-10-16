@@ -33,10 +33,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnIzaberiRestoran = new System.Windows.Forms.Button();
             this.pnl = new System.Windows.Forms.Panel();
+            this.lbRezJela = new System.Windows.Forms.ListBox();
             this.lbJela = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbRezJela = new System.Windows.Forms.ListBox();
             this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblCena = new System.Windows.Forms.Label();
             this.pnl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +88,14 @@
             this.pnl.Size = new System.Drawing.Size(770, 299);
             this.pnl.TabIndex = 7;
             // 
+            // lbRezJela
+            // 
+            this.lbRezJela.FormattingEnabled = true;
+            this.lbRezJela.Location = new System.Drawing.Point(410, 0);
+            this.lbRezJela.Name = "lbRezJela";
+            this.lbRezJela.Size = new System.Drawing.Size(357, 290);
+            this.lbRezJela.TabIndex = 7;
+            // 
             // lbJela
             // 
             this.lbJela.FormattingEnabled = true;
@@ -104,14 +114,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Jela dodata u rezervaciju";
             // 
-            // lbRezJela
-            // 
-            this.lbRezJela.FormattingEnabled = true;
-            this.lbRezJela.Location = new System.Drawing.Point(410, 0);
-            this.lbRezJela.Name = "lbRezJela";
-            this.lbRezJela.Size = new System.Drawing.Size(357, 290);
-            this.lbRezJela.TabIndex = 7;
-            // 
             // btnSacuvaj
             // 
             this.btnSacuvaj.Location = new System.Drawing.Point(296, 436);
@@ -122,11 +124,33 @@
             this.btnSacuvaj.UseVisualStyleBackColor = true;
             this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(537, 483);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Ukupna cena";
+            // 
+            // lblCena
+            // 
+            this.lblCena.AutoSize = true;
+            this.lblCena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCena.Location = new System.Drawing.Point(647, 483);
+            this.lblCena.Name = "lblCena";
+            this.lblCena.Size = new System.Drawing.Size(13, 20);
+            this.lblCena.TabIndex = 11;
+            this.lblCena.Text = ".";
+            // 
             // RezervacijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 516);
+            this.Controls.Add(this.lblCena);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pnl);
@@ -153,5 +177,7 @@
         private System.Windows.Forms.ListBox lbRezJela;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCena;
     }
 }

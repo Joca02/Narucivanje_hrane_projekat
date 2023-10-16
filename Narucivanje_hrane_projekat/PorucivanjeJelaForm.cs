@@ -36,8 +36,8 @@ namespace Narucivanje_hrane_projekat
                 jelo.id_dodaci.Add(dodaci[i].id);
                 jelo.Cena+=dodaci[i].Cena;
             }
-            
-            if (jelo.Prilog_obavezan==true && jelo.ID_Prilog==-1)
+            int check_p = clbPrilog.CheckedItems.Count;
+            if (jelo.Prilog_obavezan==true && check_p==0)
                 MessageBox.Show(jelo.Naziv+" mora imati prilog!");
             else
             {
