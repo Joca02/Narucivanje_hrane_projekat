@@ -38,6 +38,7 @@ namespace Narucivanje_hrane_projekat
             this.gramaza = j.gramaza;
             this.opis = j.opis;
             this.cena = j.cena;
+            this.ID = j.ID;
             this.ID_prilog = j.ID_prilog;
             this.ID_restoran = j.ID_restoran;
             this.prilog_obavezan = j.prilog_obavezan;

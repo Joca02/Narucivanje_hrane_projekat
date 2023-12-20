@@ -39,7 +39,6 @@ namespace Narucivanje_hrane_projekat
             rezervacija.Ukupna_cena=0;
             foreach (Jelo j in rezervacija.Porucena_jela)
             {
-                //if (sva_jela.id==j.id)
                 rezervacija.Ukupna_cena+=j.Cena;
             }
             double cena = rezervacija.Ukupna_cena;
