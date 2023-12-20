@@ -353,20 +353,7 @@ namespace Narucivanje_hrane_projekat
             if (index!=-1)
             {
                 int id = LoginForm.jela[index].id;
-                LoginForm.jela.RemoveAt(index);
-                /*foreach(Rezervacija r in LoginForm.rezervacije)
-                {
-                    foreach(Jelo j in r.Porucena_jela)
-                    {
-                        if(j.id == id)
-                        {
-                            r.Ukupna_cena-=j.Cena;
-                            r.Porucena_jela.Remove(j);
-                            if (r.Porucena_jela.Count==0)
-                                LoginForm.rezervacije.Remove(r);
-                        }
-                    }
-                }*/
+                LoginForm.jela.RemoveAt(index);       
 
                 for(int i=0;i<LoginForm.rezervacije.Count;i++)
                 {

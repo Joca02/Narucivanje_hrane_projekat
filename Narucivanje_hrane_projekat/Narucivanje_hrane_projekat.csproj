@@ -46,123 +46,123 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForm.cs">
+    <Compile Include="Forme\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
+    <Compile Include="Forme\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dodatak.cs" />
-    <Compile Include="DodatakForm.cs">
+    <Compile Include="Klase\Dodatak.cs" />
+    <Compile Include="Forme\DodatakForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DodatakForm.Designer.cs">
+    <Compile Include="Forme\DodatakForm.Designer.cs">
       <DependentUpon>DodatakForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditUserForm.cs">
+    <Compile Include="Forme\EditUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditUserForm.Designer.cs">
+    <Compile Include="Forme\EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IzaberiRestoranForm.cs">
+    <Compile Include="Forme\IzaberiRestoranForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IzaberiRestoranForm.Designer.cs">
+    <Compile Include="Forme\IzaberiRestoranForm.Designer.cs">
       <DependentUpon>IzaberiRestoranForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jelo.cs" />
-    <Compile Include="JeloForm.cs">
+    <Compile Include="Klase\Jelo.cs" />
+    <Compile Include="Forme\JeloForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JeloForm.Designer.cs">
+    <Compile Include="Forme\JeloForm.Designer.cs">
       <DependentUpon>JeloForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KlijentForm.cs">
+    <Compile Include="Forme\KlijentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KlijentForm.Designer.cs">
+    <Compile Include="Forme\KlijentForm.Designer.cs">
       <DependentUpon>KlijentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KlijentRestoranForm.cs">
+    <Compile Include="Forme\KlijentRestoranForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KlijentRestoranForm.Designer.cs">
+    <Compile Include="Forme\KlijentRestoranForm.Designer.cs">
       <DependentUpon>KlijentRestoranForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forme\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forme\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Korisnik.cs" />
-    <Compile Include="NovNalogForm.cs">
+    <Compile Include="Klase\Korisnik.cs" />
+    <Compile Include="Forme\NovNalogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NovNalogForm.Designer.cs">
+    <Compile Include="Forme\NovNalogForm.Designer.cs">
       <DependentUpon>NovNalogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PorucivanjeJelaForm.cs">
+    <Compile Include="Forme\PorucivanjeJelaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PorucivanjeJelaForm.Designer.cs">
+    <Compile Include="Forme\PorucivanjeJelaForm.Designer.cs">
       <DependentUpon>PorucivanjeJelaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prilog.cs" />
-    <Compile Include="PrilogForm.cs">
+    <Compile Include="Klase\Prilog.cs" />
+    <Compile Include="Forme\PrilogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrilogForm.Designer.cs">
+    <Compile Include="Forme\PrilogForm.Designer.cs">
       <DependentUpon>PrilogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Restoran.cs" />
-    <Compile Include="RestoranForm.cs">
+    <Compile Include="Klase\Restoran.cs" />
+    <Compile Include="Forme\RestoranForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RestoranForm.Designer.cs">
+    <Compile Include="Forme\RestoranForm.Designer.cs">
       <DependentUpon>RestoranForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rezervacija.cs" />
-    <Compile Include="RezervacijaForm.cs">
+    <Compile Include="Klase\Rezervacija.cs" />
+    <Compile Include="Forme\RezervacijaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RezervacijaForm.Designer.cs">
+    <Compile Include="Forme\RezervacijaForm.Designer.cs">
       <DependentUpon>RezervacijaForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminForm.resx">
+    <EmbeddedResource Include="Forme\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DodatakForm.resx">
+    <EmbeddedResource Include="Forme\DodatakForm.resx">
       <DependentUpon>DodatakForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditUserForm.resx">
+    <EmbeddedResource Include="Forme\EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IzaberiRestoranForm.resx">
+    <EmbeddedResource Include="Forme\IzaberiRestoranForm.resx">
       <DependentUpon>IzaberiRestoranForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JeloForm.resx">
+    <EmbeddedResource Include="Forme\JeloForm.resx">
       <DependentUpon>JeloForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KlijentForm.resx">
+    <EmbeddedResource Include="Forme\KlijentForm.resx">
       <DependentUpon>KlijentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KlijentRestoranForm.resx">
+    <EmbeddedResource Include="Forme\KlijentRestoranForm.resx">
       <DependentUpon>KlijentRestoranForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forme\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NovNalogForm.resx">
+    <EmbeddedResource Include="Forme\NovNalogForm.resx">
       <DependentUpon>NovNalogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PorucivanjeJelaForm.resx">
+    <EmbeddedResource Include="Forme\PorucivanjeJelaForm.resx">
       <DependentUpon>PorucivanjeJelaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrilogForm.resx">
+    <EmbeddedResource Include="Forme\PrilogForm.resx">
       <DependentUpon>PrilogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -174,10 +174,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RestoranForm.resx">
+    <EmbeddedResource Include="Forme\RestoranForm.resx">
       <DependentUpon>RestoranForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RezervacijaForm.resx">
+    <EmbeddedResource Include="Forme\RezervacijaForm.resx">
       <DependentUpon>RezervacijaForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
