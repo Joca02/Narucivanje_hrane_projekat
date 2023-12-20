@@ -16,23 +16,22 @@ namespace Narucivanje_hrane_projekat
         public Korisnik klijent;
         DateTime min;
         DateTime max;
+        List<Rezervacija> moje_rezervacije;
+
         public KlijentForm(Korisnik korisnik)    
         {
             InitializeComponent();
             klijent=korisnik;
             Postavi_Rezervacije();
+            Postavi_Date_Limt();
+        }
 
+        void Postavi_Date_Limt()
+        {
             if (moje_rezervacije.Count!=0)
             {
                 min =moje_rezervacije[0].date.Date;
-                max = moje_rezervacije[0].date.Date;
-                foreach (Rezervacija rezervacija in moje_rezervacije)
-                {
-                    if (rezervacija.date>max)
-                        max=rezervacija.date;
-                    else if (rezervacija.date<min)
-                        min=rezervacija.date;
-                }
+                max = moje_rezervacije[moje_rezervacije.Count-1].date.Date;
 
                 dtMin.MinDate=min;
                 dtMin.MaxDate=max;
@@ -40,10 +39,12 @@ namespace Narucivanje_hrane_projekat
                 dtMax.MinDate=min;
                 dtMin.Value=min;
                 dtMax.Value=max;
-            }
 
+                if (osvezi!=null)
+                    osvezi-=Postavi_Date_Limt;
+            }
         }
-        List<Rezervacija> moje_rezervacije;
+
         void Postavi_Rezervacije()
         {
             moje_rezervacije=new List<Rezervacija>();
@@ -58,27 +59,37 @@ namespace Narucivanje_hrane_projekat
             lbRezervacije.DataSource=null;
             lbRezervacije.DataSource=moje_rezervacije;
 
-            if (AdminForm.pOsvezi!=null)
-                AdminForm.pOsvezi-=Postavi_Rezervacije;
+            if (osvezi!=null)
+               osvezi-=Postavi_Rezervacije;
         }
 
         void Filtriraj_datum(DateTime min,DateTime max)
         {
-            List<Rezervacija> kopija = new List<Rezervacija>();
-            foreach (Rezervacija rezervacija in moje_rezervacije)
+            if(min<=max)
             {
-                if (rezervacija.date.Date >= min.Date && rezervacija.date.Date <= max.Date)
-                    kopija.Add(rezervacija);
+                List<Rezervacija> kopija = new List<Rezervacija>();
+                foreach (Rezervacija rezervacija in moje_rezervacije)
+                {
+                    if (rezervacija.date.Date >= min.Date && rezervacija.date.Date <= max.Date)
+                        kopija.Add(rezervacija);
+                }
+                lbRezervacije.DataSource = null;
+                lbRezervacije.DataSource = kopija;
             }
-            lbRezervacije.DataSource = null;
-            lbRezervacije.DataSource = kopija;
+           else
+            {
+                MessageBox.Show("Morate uneti ispravan raspon datuma za filtriranje.");
+                dtMax.Value=this.max;
+                dtMin.Value=this.min;
+            }
         }
 
 
         private void btnDodajRezervaciju_Click(object sender, EventArgs e)
         {
             RezervacijaForm f = new RezervacijaForm(klijent.id);
-           osvezi+=Postavi_Rezervacije;
+            osvezi+=Postavi_Rezervacije;
+            osvezi+=Postavi_Date_Limt;
             f.Show();
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

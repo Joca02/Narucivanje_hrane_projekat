@@ -352,7 +352,42 @@ namespace Narucivanje_hrane_projekat
             int index = jela.SelectedIndex;
             if (index!=-1)
             {
+                int id = LoginForm.jela[index].id;
                 LoginForm.jela.RemoveAt(index);
+                /*foreach(Rezervacija r in LoginForm.rezervacije)
+                {
+                    foreach(Jelo j in r.Porucena_jela)
+                    {
+                        if(j.id == id)
+                        {
+                            r.Ukupna_cena-=j.Cena;
+                            r.Porucena_jela.Remove(j);
+                            if (r.Porucena_jela.Count==0)
+                                LoginForm.rezervacije.Remove(r);
+                        }
+                    }
+                }*/
+
+                for(int i=0;i<LoginForm.rezervacije.Count;i++)
+                {
+                    for(int j = 0; j<LoginForm.rezervacije[i].Porucena_jela.Count;j++)
+                    {
+                        if (LoginForm.rezervacije[i].Porucena_jela[j].id==id)
+                        {
+                            LoginForm.rezervacije[i].Ukupna_cena-=
+                                LoginForm.rezervacije[i].Porucena_jela[j].Cena;
+                            LoginForm.rezervacije[i].Porucena_jela.Remove(
+                                LoginForm.rezervacije[i].Porucena_jela[j]);
+                            j--;
+                            if (LoginForm.rezervacije[i].Porucena_jela.Count==0)
+                            {
+                                LoginForm.rezervacije.Remove(LoginForm.rezervacije[i]);
+                                i--;
+                            }
+
+                        }
+                    }
+                }
                 pOsvezi+=Osvezi_jelo_listbox;
                 pOsvezi();
             }
